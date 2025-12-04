@@ -1,6 +1,6 @@
-import 'dart:ui'; 
+import 'dart:ui';
 import 'package:flutter/material.dart';
-import '../models/application_model.dart';
+import '../../../model/application_model.dart';
 
 class AppColors {
   static const Color backgroundCream = Color(0xFFFFF8F4);
@@ -19,10 +19,7 @@ class AppColors {
 class ApplicationDetailModal extends StatelessWidget {
   final ApplicationModel applicationData;
 
-  const ApplicationDetailModal({
-    super.key,
-    required this.applicationData,
-  });
+  const ApplicationDetailModal({super.key, required this.applicationData});
 
   @override
   Widget build(BuildContext context) {

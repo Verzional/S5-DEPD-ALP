@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../models/job_model.dart';
-import '../models/favorite_model.dart';
-import '../data/dummy_data.dart';
+import '../../../model/job_model.dart';
+import '../../../data/dummy_jobs_data.dart';
 import 'detailjob.dart';
 import 'listjob.dart';
 
@@ -12,6 +11,7 @@ class SavedJobsPage extends StatefulWidget {
   @override
   State<SavedJobsPage> createState() => _SavedJobsPageState();
 }
+
 class AppColors {
   static const Color backgroundCream = Color(0xFFFFF8F4);
   static const Color filterBackground = Color(0xFFFFEFE2);
@@ -22,7 +22,6 @@ class AppColors {
   static const Color textLightGrey = Color(0xFFB2B2B2);
   static const Color primaryOrange = Color(0xFFFF6B6B);
 }
-
 
 class _SavedJobsPageState extends State<SavedJobsPage> {
   List<JobModel> _displayedJobs = [];
@@ -49,12 +48,13 @@ class _SavedJobsPageState extends State<SavedJobsPage> {
   void _removeFromFavorites(String jobId) {
     setState(() {
       _displayedJobs.removeWhere((job) => job.id == jobId);
-      
+
       final index = dummyFavorites.indexWhere(
-          (fav) => fav.jobId == jobId && fav.userId == currentUser.id);
-      
+        (fav) => fav.jobId == jobId && fav.userId == currentUser.id,
+      );
+
       if (index != -1) {
-        dummyFavorites.removeAt(index); 
+        dummyFavorites.removeAt(index);
       }
     });
 
@@ -86,9 +86,10 @@ class _SavedJobsPageState extends State<SavedJobsPage> {
         title: const Text(
           "Saved Jobs",
           style: TextStyle(
-              fontFamily: 'Poppins',
-              fontWeight: FontWeight.bold,
-              color: AppColors.textDark),
+            fontFamily: 'Poppins',
+            fontWeight: FontWeight.bold,
+            color: AppColors.textDark,
+          ),
         ),
         leading: IconButton(
           icon: const Icon(Icons.arrow_back_ios_new, color: AppColors.textDark),
@@ -102,7 +103,7 @@ class _SavedJobsPageState extends State<SavedJobsPage> {
               itemCount: _displayedJobs.length,
               itemBuilder: (context, index) {
                 final job = _displayedJobs[index];
-                
+
                 return Stack(
                   children: [
                     JobCard(
@@ -133,7 +134,7 @@ class _SavedJobsPageState extends State<SavedJobsPage> {
                         );
                       },
                     ),
-                    
+
                     Positioned(
                       top: 15,
                       right: 15,
@@ -146,12 +147,15 @@ class _SavedJobsPageState extends State<SavedJobsPage> {
                               color: Colors.black.withOpacity(0.1),
                               blurRadius: 5,
                               offset: const Offset(0, 2),
-                            )
-                          ]
+                            ),
+                          ],
                         ),
                         child: IconButton(
                           onPressed: () => _removeFromFavorites(job.id),
-                          icon: const Icon(Icons.favorite, color: AppColors.primaryOrange),
+                          icon: const Icon(
+                            Icons.favorite,
+                            color: AppColors.primaryOrange,
+                          ),
                           tooltip: "Remove from favorites",
                         ),
                       ),
@@ -178,10 +182,14 @@ class _SavedJobsPageState extends State<SavedJobsPage> {
                   color: AppColors.gradientStart.withOpacity(0.2),
                   blurRadius: 20,
                   offset: const Offset(0, 10),
-                )
+                ),
               ],
             ),
-            child: const Icon(Icons.favorite_border, size: 60, color: AppColors.gradientStart),
+            child: const Icon(
+              Icons.favorite_border,
+              size: 60,
+              color: AppColors.gradientStart,
+            ),
           ),
           const SizedBox(height: 24),
           const Text(

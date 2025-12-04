@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
-import 'dart:math'; 
 
-import 'apply_modal_components.dart';
-import '../models/job_model.dart';
-import '../data/dummy_data.dart';
+import '../../widgets/jobs/apply_modal_components.dart';
+import '../../../model/job_model.dart';
+import '../../../data/dummy_jobs_data.dart';
 
 import 'listjob.dart';
 
