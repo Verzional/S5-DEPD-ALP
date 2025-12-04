@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:uc_hub/theme/uchub_colors.dart';
-import 'package:uc_hub/screens/department/jobs/department_job_list.dart';
-import 'package:uc_hub/screens/department/applicants/department_applicants_list.dart';
-import 'package:uc_hub/screens/department/profile/department_profile_screen.dart';
+import 'package:uc_hub/view/pages/department/jobs/department_job_list.dart';
+import 'package:uc_hub/view/pages/department/applicants/department_applicants_list.dart';
+import 'package:uc_hub/view/pages/department/profile/department_profile_screen.dart';
 
 class DepartmentLayout extends StatefulWidget {
   const DepartmentLayout({super.key});

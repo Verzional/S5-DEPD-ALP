@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:uc_hub/theme/uchub_colors.dart';
-import 'package:uc_hub/screens/department/department_layout.dart';
+import 'package:uc_hub/view/pages/department/department_layout.dart';
 import 'package:uc_hub/screens/auth/register_department_screen.dart';
 
 class LoginScreen extends StatefulWidget {
