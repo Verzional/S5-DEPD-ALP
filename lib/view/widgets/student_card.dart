@@ -1,17 +1,15 @@
 import 'package:flutter/material.dart';
 
-class JobCard extends StatelessWidget {
-  final String title;
-  final String company;
+class StudentCard extends StatelessWidget {
+  final String name;
+  final String bio;
   final String location;
-  final List<String> tags;
 
-  const JobCard({
+  const StudentCard({
     super.key,
-    required this.title,
-    required this.company,
+    required this.name,
+    required this.bio,
     required this.location,
-    this.tags = const [],
   });
 
   @override
@@ -40,14 +38,14 @@ class JobCard extends StatelessWidget {
           ), 
           // Content area
           Text(
-            title,
+            name,
             style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
             maxLines: 1,
             overflow: TextOverflow.ellipsis,
           ),
           const SizedBox(height: 4),
           Text(
-            company,
+            bio,
             style: const TextStyle(fontSize: 12),
             maxLines: 1,
             overflow: TextOverflow.ellipsis,
@@ -58,31 +56,13 @@ class JobCard extends StatelessWidget {
             maxLines: 1,
             overflow: TextOverflow.ellipsis,
           ),
-
           const SizedBox(height: 8),
-
-          Row(
-            children: tags.map((tag) {
-              return Padding(
-                padding: const EdgeInsets.only(right: 8.0),
-                child: Container(
-                  padding: const EdgeInsets.symmetric(
-                    horizontal: 8,
-                    vertical: 4,
-                  ),
-                  decoration: BoxDecoration(
-                    color: tag == 'Remote'
-                        ? Colors.blueAccent
-                        : Colors.purpleAccent,
-                    borderRadius: BorderRadius.circular(8),
-                  ),
-                  child: Text(
-                    tag,
-                    style: const TextStyle(color: Colors.white, fontSize: 10),
-                  ),
-                ),
-              );
-            }).toList(),
+          SizedBox(
+            width: double.infinity,
+            child: ElevatedButton(
+              onPressed: () {},
+              child: const Text("Recruit"),
+            ),
           ),
         ],
       ),

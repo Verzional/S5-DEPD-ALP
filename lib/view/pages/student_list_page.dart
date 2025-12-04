@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import '../widgets/job_card.dart';
-import 'student_list_page.dart';
+import '../widgets/student_card.dart';
+import 'job_vacancies_page.dart';
 
-class JobVacanciesPage extends StatelessWidget {
-  const JobVacanciesPage({super.key});
+class StudentListPage extends StatelessWidget {
+  const StudentListPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -19,18 +19,18 @@ class JobVacanciesPage extends StatelessWidget {
             ListTile(
               title: const Text('Job Vacancies'),
               onTap: () {
-                Navigator.pop(context); // Close drawer
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const JobVacanciesPage(),
+                  ),
+                );
               },
             ),
             ListTile(
               title: const Text('Student List'),
               onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => const StudentListPage(),
-                  ),
-                );
+                Navigator.pop(context); // Close drawer
               },
             ),
           ],
@@ -47,7 +47,7 @@ class JobVacanciesPage extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     const Text(
-                      "Job Vacancies",
+                      "Student List",
                       style: TextStyle(
                         fontSize: 28,
                         fontWeight: FontWeight.bold,
@@ -93,19 +93,6 @@ class JobVacanciesPage extends StatelessWidget {
                         ),
                         child: const Text("Filter"),
                       ),
-                      Container(
-                        width: 160,
-                        height: 50,
-                        alignment: Alignment.center,
-                        decoration: BoxDecoration(
-                          color: Colors.grey[300],
-                          borderRadius: BorderRadius.circular(12),
-                        ),
-                        child: const Text(
-                          "Add New Job Vacancy",
-                          textAlign: TextAlign.center,
-                        ),
-                      ),
                     ],
                   ),
                 ),
@@ -120,11 +107,10 @@ class JobVacanciesPage extends StatelessWidget {
                     ),
                     itemCount: 9,
                     itemBuilder: (context, index) {
-                      return const JobCard(
-                        title: "Job Title",
-                        company: "Company Name",
+                      return const StudentCard(
+                        name: "Student Name",
+                        bio: "Short bio about the student",
                         location: "Location",
-                        tags: ["Remote", "Full-time"],
                       );
                     },
                   ),
