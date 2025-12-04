@@ -1,10 +1,10 @@
 // lib/data/dummy_data.dart
 
-import '../models/job_model.dart';
-import '../models/user_model.dart';
-import '../models/application_model.dart';
-import '../models/category_model.dart';
-import '../models/favorite_model.dart';
+import '../model/job_model.dart';
+import '../model/user_model.dart';
+import '../model/application_model.dart';
+import '../model/category_model.dart';
+import '../model/favorite_model.dart';
 
 List<CategoryModel> dummyCategories = [
   CategoryModel(id: "c1", name: "Technology"),

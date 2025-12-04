@@ -3,8 +3,8 @@ import 'dart:math'; // Diperlukan untuk logika pagination
 import 'package:flutter/material.dart';
 
 // --- IMPORT MODEL DAN DATA ---
-import '../models/application_model.dart';
-import '../data/dummy_data.dart';
+import '../../../model/application_model.dart';
+import '../../../data/dummy_jobs_data.dart';
 // Jika Anda masih memisahkan modal di file lain, import di sini.
 // Jika sudah digabung di bawah, tidak perlu import file modal.
 // import 'application_detail_modal.dart';

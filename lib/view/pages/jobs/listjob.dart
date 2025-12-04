@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'dart:math';
 
-import '../models/job_model.dart';
-import '../models/category_model.dart'; 
-import '../data/dummy_data.dart';
+import '../../../model/job_model.dart';
+import '../../../model/category_model.dart';
+import '../../../data/dummy_jobs_data.dart';
 import 'detailjob.dart';
 import 'my_account_page.dart';
 import 'myapplication.dart';
@@ -1123,7 +1123,10 @@ class NavBar extends StatelessWidget {
             ),
             child: const Text(
               "UC",
-              style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+              style: TextStyle(
+                color: Colors.white,
+                fontWeight: FontWeight.bold,
+              ),
             ),
           ),
           const SizedBox(width: 10),
@@ -1161,24 +1164,29 @@ class NavBar extends StatelessWidget {
             onTap: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(
-                  builder: (context) => const SavedJobsPage(),
-                ),
+                MaterialPageRoute(builder: (context) => const SavedJobsPage()),
               );
             },
             borderRadius: BorderRadius.circular(8),
             child: Padding(
-              padding:
-                  const EdgeInsets.symmetric(horizontal: 15.0, vertical: 8.0),
+              padding: const EdgeInsets.symmetric(
+                horizontal: 15.0,
+                vertical: 8.0,
+              ),
               child: Row(
                 children: const [
-                  Icon(Icons.favorite_border,
-                      color: AppColors.textDark, size: 18),
+                  Icon(
+                    Icons.favorite_border,
+                    color: AppColors.textDark,
+                    size: 18,
+                  ),
                   SizedBox(width: 6),
                   Text(
                     "Saved",
                     style: TextStyle(
-                        color: AppColors.textDark, fontWeight: FontWeight.w500),
+                      color: AppColors.textDark,
+                      fontWeight: FontWeight.w500,
+                    ),
                   ),
                 ],
               ),
@@ -1195,9 +1203,7 @@ class NavBar extends StatelessWidget {
             onTap: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(
-                  builder: (context) => const MyAccountPage(),
-                ),
+                MaterialPageRoute(builder: (context) => const MyAccountPage()),
               );
             },
             borderRadius: BorderRadius.circular(20),
@@ -1208,8 +1214,9 @@ class NavBar extends StatelessWidget {
                   CircleAvatar(
                     radius: 18,
                     backgroundColor: Colors.grey[200],
-                    backgroundImage:
-                        const NetworkImage("https://i.pravatar.cc/300?img=5"),
+                    backgroundImage: const NetworkImage(
+                      "https://i.pravatar.cc/300?img=5",
+                    ),
                   ),
                   const SizedBox(width: 10),
                   const Text(
@@ -1223,7 +1230,7 @@ class NavBar extends StatelessWidget {
               ),
             ),
           ),
-          
+
           const SizedBox(width: 10),
           // Tombol Register (Opsional, bisa dihapus jika sudah login)
           // GradientButton(text: "Register Now", onPressed: () {}, width: 130),
@@ -1249,6 +1256,7 @@ class NavBar extends StatelessWidget {
     );
   }
 }
+
 class Footer extends StatelessWidget {
   const Footer({super.key});
   @override

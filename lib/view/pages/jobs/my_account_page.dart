@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../data/dummy_data.dart';
-import '../models/user_model.dart';
+import '../../../data/dummy_jobs_data.dart';
 
 class AppColors {
   static const Color backgroundCream = Color(0xFFFFF8F4);
