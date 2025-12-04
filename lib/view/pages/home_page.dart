@@ -281,9 +281,6 @@ class _HomePageState extends State<HomePage> {
                           const Color(0xFFFF8A34),
                           const Color(0xFFFF6FAF),
                         ],
-                        onAction: () {
-                          // Student action (e.g., go to Student Login/Register)
-                        },
                       ),
                       const SizedBox(width: 30),
                       _buildInfoCard(
@@ -296,13 +293,8 @@ class _HomePageState extends State<HomePage> {
                           const Color(0xFFA594F9),
                           const Color(0xFF6F86FF),
                         ],
-                         onAction: () {
-                          // Company action
-                        },
                       ),
                       const SizedBox(width: 30),
-                      
-                      // *** DEPARTMENT CARD - DIRECT NAVIGATION ***
                       _buildInfoCard(
                         title: "UC Department",
                         subtitle: "Internal Unit",
@@ -313,15 +305,6 @@ class _HomePageState extends State<HomePage> {
                           const Color(0xFF4FC3F7),
                           const Color(0xFF00B0FF),
                         ],
-                        // THIS MAKES IT GO DIRECTLY TO DEPARTMENT PAGE
-                        onAction: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => const DepartmentLayout(),
-                            ),
-                          );
-                        },
                       ),
                     ],
                   ),
@@ -461,7 +444,7 @@ class _HomePageState extends State<HomePage> {
             ),
 
             // ───────────────────────────────
-            // 3.5. UC IN NUMBERS
+            // 3.5. UC IN NUMBERS (NEW SECTION)
             // ───────────────────────────────
             Container(
               key: _candidatesKey,
@@ -713,16 +696,16 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
-  // --- HELPER UNTUK STATISTIK ---
+  // --- HELPER UNTUK STATISTIK (BARU) ---
   Widget _buildStatItem(String value, String label) {
     return Column(
       children: [
         Text(
           value,
           style: const TextStyle(
-            fontSize: 50,
+            fontSize: 50, // Font besar untuk angka
             fontWeight: FontWeight.w900,
-            color: Color(0xFFD98736),
+            color: Color(0xFFD98736), // Warna oranye/emas
           ),
         ),
         const SizedBox(height: 8),
@@ -731,7 +714,7 @@ class _HomePageState extends State<HomePage> {
           style: const TextStyle(
             fontSize: 20,
             fontWeight: FontWeight.bold,
-            color: Color(0xFF2D3E50),
+            color: Color(0xFF2D3E50), // Warna gelap untuk label
           ),
         ),
       ],
@@ -747,7 +730,6 @@ class _HomePageState extends State<HomePage> {
     required IconData icon,
     required Color bgColor,
     required List<Color> gradientColors,
-    VoidCallback? onAction, // <-- Added parameter for click action
   }) {
     return Container(
       width: 300,
@@ -826,7 +808,7 @@ class _HomePageState extends State<HomePage> {
               ],
             ),
             child: ElevatedButton(
-              onPressed: onAction ?? () {}, // <-- Uses the action here
+              onPressed: () {},
               style: ElevatedButton.styleFrom(
                 backgroundColor: Colors.transparent,
                 shadowColor: Colors.transparent,
