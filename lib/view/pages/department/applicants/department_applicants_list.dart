@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:uc_hub/theme/uchub_colors.dart';
-import 'package:uc_hub/screens/department/applicants/department_applicant_detail.dart';
+import 'package:uc_hub/view/pages/department/applicants/department_applicant_detail.dart';
 
 class DepartmentApplicantsList extends StatefulWidget {
   const DepartmentApplicantsList({super.key});

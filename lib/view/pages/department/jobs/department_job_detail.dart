@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:uc_hub/theme/uchub_colors.dart';
-import 'package:uc_hub/screens/department/jobs/department_job_form.dart';
+import 'package:uc_hub/view/pages/department/jobs/department_job_form.dart';
 
 class DepartmentJobDetail extends StatelessWidget {
   final Map<String, dynamic> job;
