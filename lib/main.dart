@@ -2,13 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:uc_hub/view/pages/pages.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(const UCHubApp());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class UCHubApp extends StatelessWidget {
+  const UCHubApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
